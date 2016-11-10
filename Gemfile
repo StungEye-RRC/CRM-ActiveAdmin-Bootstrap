@@ -15,6 +15,8 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
 
+gem 'bootstrap', '~> 4.0.0.alpha5'
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end

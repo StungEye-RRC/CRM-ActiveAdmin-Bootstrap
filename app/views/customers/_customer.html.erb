@@ -1,0 +1,24 @@
+<div class="customer">
+  <h4><%= customer.full_name %></h4>
+
+  <% if customer.image.present? %>
+    <%= image_tag customer.image %>
+  <% end %>
+
+  <p>
+    <strong>Province: </strong>
+    <% if customer.province.present? %>
+      <%= customer.province.name %>
+    <% else %>
+      Unknown
+    <% end %>
+  </p>
+
+  <p>
+    <strong>p:</strong> <%= customer.phone %>
+  </p>
+
+  <p>
+    <strong>e:</strong> <%= customer.email %>
+  </p>
+</div>

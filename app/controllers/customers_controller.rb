@@ -11,20 +11,19 @@ class CustomersController < ApplicationController
   def remember_to_call
     id = params[:id].to_i
     session[:customers_to_call] << id unless session[:customers_to_call].include?(id)
-
-    redirect_to root_url
+    redirect_to root_url, notice: "Successfully added customer to the to-call list."
   end
 
   def mark_as_called
     id = params[:id].to_i
     session[:customers_to_call].delete(id)
 
-    redirect_to root_url
+    redirect_to root_url, notice: "Marked Customer As Called"
   end
 
   def mark_all_as_called
     session[:customers_to_call] = []
-    redirect_to root_url
+    redirect_to root_url, notice: "Removed all Customers from To-Call List"
   end
 
   private

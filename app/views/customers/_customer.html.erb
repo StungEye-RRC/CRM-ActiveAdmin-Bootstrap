@@ -18,17 +18,12 @@
         Unknown
       <% end %>
     </p>
-  </div>
-
-  <div class="card-block">
-      <p class="card-text">
-        <%= customer.phone %>
-      </p>
-  </div>
-
-  <div class="card-block">
-      <p class="card-text">
-        <%= customer.email %>
-      </p>
+    <p class="card-text">
+      <%= customer.phone %>
+    </p>
+    <p class="card-text">
+      <%= customer.email %>
+    </p>
+    <%= link_to 'Remember To Call', remember_to_call_customer_path(customer), method: :post %>
   </div>
 </div>

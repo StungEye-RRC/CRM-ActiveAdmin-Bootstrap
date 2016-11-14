@@ -6,6 +6,9 @@ Rails.application.routes.draw do
       post :remember_to_call
       post :mark_as_called
     end
+    collection do
+      post :mark_all_as_called
+    end
   end
 
   devise_for :admin_users, ActiveAdmin::Devise.config

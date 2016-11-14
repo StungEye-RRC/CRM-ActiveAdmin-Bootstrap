@@ -1,10 +1,12 @@
 <p>
   You have visited this page <%= pluralize(@visit_count, 'time') %>.
-  <%= debug session[:customers_to_call] %>
 </p>
 
 <% if @customers_to_call.any? %>
   <h1>Customers to Call</h1>
+  <p>
+    <%= link_to 'Mark All as Called', mark_all_as_called_customers_path, method: :post %>
+  </p>
 
   <div class="card-deck-wrapper">
     <div class="card-deck">

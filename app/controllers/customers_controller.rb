@@ -10,12 +10,21 @@ class CustomersController < ApplicationController
 
   def remember_to_call
     id = params[:id].to_i
-    session[:customers_to_call] << id  unless session[:customers_to_call].include?(id)
+    session[:customers_to_call] << id unless session[:customers_to_call].include?(id)
 
     redirect_to root_url
   end
 
   def mark_as_called
+    id = params[:id].to_i
+    session[:customers_to_call].delete(id)
+
+    redirect_to root_url
+  end
+
+  def mark_all_as_called
+    session[:customers_to_call] = []
+    redirect_to root_url
   end
 
   private

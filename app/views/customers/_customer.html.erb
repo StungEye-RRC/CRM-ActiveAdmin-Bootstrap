@@ -24,6 +24,10 @@
     <p class="card-text">
       <%= customer.email %>
     </p>
-    <%= link_to 'Remember To Call', remember_to_call_customer_path(customer), method: :post %>
+    <% if @customers_to_call.include?(customer) %>
+      <%= link_to 'Mark as Called', mark_as_called_customer_path(customer), method: :post %>
+    <% else %>
+      <%= link_to 'Remember To Call', remember_to_call_customer_path(customer), method: :post %>
+    <% end %>
   </div>
 </div>
